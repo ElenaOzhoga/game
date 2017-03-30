@@ -1,0 +1,72 @@
+body {
+	margin: 0;
+	color: #333;
+	background: #ececec;
+	font: 15px/17px arial, helvetica, sans-serif;
+}
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+input, select {
+	vertical-align: middle;
+	font: 100% arial, sans-serif;
+	outline:none;
+}
+#content{
+	margin:46px auto 0;
+	width:50%;
+	max-width: 700px;
+	min-width: 400px;
+	background:#000;
+	border:5px solid #ccc;
+	border-radius:11px;
+	-webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	-webkit-box-shadow: 0px 0px 5px 5px rgba(219,219,219,1);
+	-moz-box-shadow: 0px 0px 5px 5px rgba(219,219,219,1);
+	box-shadow: 0px 0px 5px 5px rgba(219,219,219,1);
+	padding:31px;
+}
+#content h1{
+	text-align: center;
+	margin: 0 0 10px;
+	color: #602828;
+	font-size: 25px;
+	line-height: 27px;
+}
+.grey {color: #606060;}
+.green {color: #425114;}
+.message{
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+.message span{color: #9c0;}
+.field{
+	margin: 0 auto;
+	font-size:100px;
+	line-height: 102px;
+	color: #fff;
+}
+.field td{
+	background: #282828;
+	width: 102px;
+	height: 102px;
+	text-align: center;
+}
+.cross{color:#f44}
+.zero{color:#9c0;}
+.field .diag1{background: url(../images/diag1.png) no-repeat;}
+.field .diag2{background: url(../images/diag2.png) no-repeat;}
+.field .vertical{background: url(../images/vertical.png) no-repeat;}
+.field .horizon{background: url(../images/horizon.png) no-repeat;}
+#popup{
+	background:#000;
+	position: absolute;
+	top:157px;
+	left:41%;
+	color:#fff;
+	padding: 162px 119px 138px 115px;
+}
