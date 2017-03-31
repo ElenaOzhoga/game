@@ -4,16 +4,11 @@ body {
 	background: #ececec;
 	font: 15px/17px arial, helvetica, sans-serif;
 }
-form, fieldset {
-	margin: 0;
-	padding: 0;
-	border-style: none;
+a{
+	text-decoration: none;
+	color:#fff;
 }
-input, select {
-	vertical-align: middle;
-	font: 100% arial, sans-serif;
-	outline:none;
-}
+a:hover{text-decoration: underline;}
 #content{
 	margin:46px auto 0;
 	width:50%;
@@ -43,7 +38,6 @@ input, select {
 	font-weight: bold;
 	text-align: center;
 }
-.message span{color: #9c0;}
 .field{
 	margin: 0 auto;
 	font-size:100px;
@@ -70,3 +64,4 @@ input, select {
 	color:#fff;
 	padding: 162px 119px 138px 115px;
 }
+#popup a{display: block;}

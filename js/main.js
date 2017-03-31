@@ -1,41 +1,64 @@
 var popup = document.getElementById("popup");
+var tableCell = document.querySelectorAll("td");
+var messText = document.querySelectorAll(".message span")[0];
+var flag;
 popup.hidden = true;
-document.querySelectorAll("td").forEach( function (elem) {
+messText.className = 'zero';
+messText.innerHTML = 'O';
+tableCell.forEach( function (elem) {
 	elem.className = 'empty';
 	elem.addEventListener('click', function () {
-		if (elem.className === 'empty') {
+		if (elem.className === 'empty' && !flag) {
 			elem.className = 'zero';
 			elem.innerHTML += 'O';
+			messText.className = 'cross';
+			messText.innerHTML = 'X';
+			flag = true;
 			var indexElem = Math.floor(0 + Math.random() * 8);
 			var crossElem = document.querySelectorAll(".empty")[indexElem];
 			setTimeout(function () {
 				if (crossElem !== undefined) {
 					crossElem.className = 'cross';
 					crossElem.innerHTML += 'X';
+					messText.className = 'zero';
+					messText.innerHTML = 'O';
+					flag = false;
 				} else {
 					indexElem = (Math.floor(0 + Math.random() * 8) == indexElem ? Math.floor(0 + Math.random() * 8) - 1 : Math.floor(0 + Math.random() * 8));
 					crossElem = document.querySelectorAll(".empty")[indexElem];
 					if (crossElem !== undefined) {
 						crossElem.className = 'cross';
 						crossElem.innerHTML += 'X';
+						messText.className = 'zero';
+						messText.innerHTML = 'O';
+						flag = false;
 					} else {
 						indexElem = (Math.floor(0 + Math.random() * 8) == indexElem ? Math.floor(0 + Math.random() * 8) - 1 : Math.floor(0 + Math.random() * 8));
 						crossElem = document.querySelectorAll(".empty")[indexElem];
 						if (crossElem !== undefined) {
 							crossElem.className = 'cross';
 							crossElem.innerHTML += 'X';
+							messText.className = 'zero';
+							messText.innerHTML = 'O';
+							flag = false;
 						} else {
 							indexElem = (Math.floor(0 + Math.random() * 8) == indexElem ? Math.floor(0 + Math.random() * 8) - 1 : Math.floor(0 + Math.random() * 8));
 							crossElem = document.querySelectorAll(".empty")[indexElem];
 							if (crossElem !== undefined) {
 								crossElem.className = 'cross';
 								crossElem.innerHTML += 'X';
+								messText.className = 'zero';
+								messText.innerHTML = 'O';
+								flag = false;
 							} else {
 								indexElem = (Math.floor(0 + Math.random() * 8) == indexElem ? Math.floor(0 + Math.random() * 8) - 1 : Math.floor(0 + Math.random() * 8));
 								crossElem = document.querySelectorAll(".empty")[indexElem];
 								if (crossElem !== undefined) {
 									crossElem.className = 'cross';
 									crossElem.innerHTML += 'X';
+									messText.className = 'zero';
+									messText.innerHTML = 'O';
+									flag = false;
 								}
 							}
 						}
@@ -101,7 +124,19 @@ document.querySelectorAll("td").forEach( function (elem) {
 						popup.hidden = false;
 					}, 500);
 				}
+				if (document.querySelectorAll(".empty").length === 0) {
+					setTimeout(function () {
+						popup.hidden = false;
+					}, 500);
+				}
 			}, 500);
 		}
+	});
+});
+popup.getElementsByTagName("a")[0].addEventListener('click', function () {
+	popup.hidden = true;
+	tableCell.forEach( function (elem) {
+		elem.className = 'empty';
+		elem.innerHTML = '';
 	});
 });
